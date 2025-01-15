@@ -31,7 +31,7 @@ int main() {
 		auto token = lexer.NextToken();
 		if(token.type == TokenType::kEOF)
 			break;
-		std::cout << token.literal << std::endl;
+		std::cout << TokenTypeString(token.type) << ": " << token.literal << std::endl;
 	}
 
 	return 0;

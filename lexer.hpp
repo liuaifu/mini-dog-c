@@ -13,6 +13,13 @@ public:
 		, ch_(' ') {
 	}
 
+	Lexer(Lexer&& rhs) {
+		input_ = std::move(rhs.input_);
+		pos_ = rhs.pos_;
+		next_pos_ = rhs.next_pos_;
+		ch_ = rhs.ch_;
+	}
+
 	void SkipWhitespace() {
 		while (ch_ == ' ' || ch_ == '\t' || ch_ == '\n' || ch_ == '\r')
 			ReadChar();
@@ -116,7 +123,7 @@ public:
 			tok = Token(TokenType::kGT, std::string(1, ch_));
 			break;
 		case ';':
-			tok = Token(TokenType::kSemicolon, std::string(1, ch_));
+			tok = Token(TokenType::kSemi, std::string(1, ch_));
 			break;
 		case ',':
 			tok = Token(TokenType::kComma, std::string(1, ch_));
@@ -150,7 +157,7 @@ public:
 		}
 		case '.':
 		{
-			tok.type = TokenType::kDouble;
+			tok.type = TokenType::kReal;
 			tok.literal = ReadNumber();
 			break;
 		}
@@ -171,7 +178,7 @@ public:
 			else if (std::isdigit(ch_))
 			{
 				tok.literal = ReadNumber();
-				tok.type = tok.literal.find('.') == std::string::npos ? TokenType::kInt : TokenType::kDouble;
+				tok.type = tok.literal.find('.') == std::string::npos ? TokenType::kNum : TokenType::kReal;
 				return tok;
 			}
 			else
