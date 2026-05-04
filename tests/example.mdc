@@ -1,0 +1,35 @@
+// mini-dog-c 示例程序
+
+fn add(a, b) {
+    return a + b;
+}
+
+fn factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+fn main() {
+    println("Hello, mini-dog-c!");
+
+    let x = 10;
+    let y = 20;
+    println("x =", x);
+    println("y =", y);
+
+    let sum = add(x, y);
+    println("x + y =", sum);
+
+    let fact5 = factorial(5);
+    println("factorial(5) =", fact5);
+
+    if (fact5 > 100) {
+        println("factorial(5) > 100");
+    } else {
+        println("factorial(5) <= 100");
+    }
+
+    println("Done!");
+}
