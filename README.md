@@ -98,10 +98,9 @@ factorial(5) > 100
 ### 运行测试
 
 ```bash
-make test_lexer      # 词法分析器测试
-make test_parser      # 语法分析器测试
-make test_evaluator   # 解释器测试
-make test             # 全部测试
+./test_lexer       # 词法分析器测试
+./test_parser      # 语法分析器测试
+./test_evaluator   # 解释器测试
 ```
 
 ## 项目结构
