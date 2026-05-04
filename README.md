@@ -1,6 +1,6 @@
 # mini-dog-c
 
-一个用 C 语言实现的小型编译器，用于理解编译器的核心工作原理。采用**词法分析 → 语法分析 → 解释执行**的流程，代码简洁，适合作为编译器入门的学习项目。
+一个用 C 语言实现的小型 C 语言编译器，用于理解编译器的核心工作原理。采用**词法分析 → 语法分析 → 解释执行**的流程，代码简洁，适合作为编译器入门的学习项目。
 
 ## 功能特性
 
@@ -60,13 +60,16 @@ println("Result:", x); // 末尾换行
 ### 编译
 
 ```bash
+mkdir build
+cd build
+cmake ..
 make
 ```
 
 ### 运行示例
 
 ```bash
-./mini-dog-c ./tests/example.mdc
+./mini-dog-c ../tests/example.mdc
 ```
 
 输出：
@@ -125,7 +128,7 @@ mini-dog-c/
 ├── 04-递归下降解析器.md
 ├── 05-解释器与代码生成.md
 └── 06-测试与总结.md
-├── Makefile
+├── CMakeLists.txt
 └── README.md
 ```
 
